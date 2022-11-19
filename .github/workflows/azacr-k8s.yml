@@ -40,7 +40,7 @@ jobs:
         with: 
           login-server: ${{ env.ctr_servername }} # default: index.docker.io
           username: ${{ env.ctr_username }}
-          password: '${{ env.ctr_password }}
+          password: ${{ env.ctr_password }}
 
 
 
