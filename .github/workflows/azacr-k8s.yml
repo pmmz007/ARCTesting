@@ -41,6 +41,20 @@ jobs:
           login-server: ${{ env.ctr_servername }} # default: index.docker.io
           username: ${{ env.ctr_username }}
           password: ${{ env.ctr_password }}
+      
+      #create Azure ACR
+      - name: Azure CLI Action
+        uses: Azure/cli@v1
+        with:
+          azcliversion: 2.30.0
+          inlineScript: |
+            az acr create --location japaneast --name japancontiner --resource-group acr-rg -sku Standard
+            az acr list -o table
+
+
+
+
+          
 
 
 
