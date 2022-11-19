@@ -48,7 +48,7 @@ jobs:
         with:
           azcliversion: 2.30.0
           inlineScript: |
-            az acr create --location japaneast --name japancontiner --resource-group acr-rg -sku Standard
+            az acr create --location japaneast --name japancontiner --resource-group acr-rg --sku Standard
             az acr list -o table
 
 
