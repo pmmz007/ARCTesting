@@ -12,10 +12,10 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-env:
-  ctr_username: 007acr
-  ctr_password: 9343wIcn2ix69RhAF9JQYd+PIsvVmtDL
-  ctr_servername: 007acr.azurecr.io
+#env:
+#  ctr_username: 007acr
+#  ctr_password: 9343wIcn2ix69RhAF9JQYd+PIsvVmtDL
+#  ctr_servername: 007acr.azurecr.io
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -38,9 +38,9 @@ jobs:
       - name: Azure Container Registry Login
         uses: Azure/docker-login@v1
         with: 
-          login-server: ${{ env.ctr_servername }} # default: index.docker.io
-          username: ${{ env.ctr_username }}
-          password: ${{ env.ctr_password }}
+          login-server: ${{ secrets.CTR_SERVERNAME }} # default: index.docker.io
+          username: ${{ secrets.CTR_USERNAME }}
+          password: ${{ secrets.CTR_PASSWORD }}
       
       #create Azure ACR
       - name: Azure CLI Action
